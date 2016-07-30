@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ActionController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem fx:id="Quit" mnemonicParsing="false" onAction="#QuitOnAction" text="Quit" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane fx:id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="back" layoutX="35.0" layoutY="293.0" mnemonicParsing="false" onAction="#BackOnAction" prefHeight="45.0" prefWidth="99.0" text="Back" />
+            <Button fx:id="verifyButton" layoutX="504.0" layoutY="293.0" mnemonicParsing="false" onAction="#verifyButtonOnAction" prefHeight="45.0" prefWidth="99.0" text="Verify" />
+            <ScrollPane layoutX="267.0" layoutY="37.0" prefViewportHeight="200.0" prefViewportWidth="363.0">
+               <content>
+                  <TextArea fx:id="textbox" editable="false" layoutX="267.0" layoutY="37.0" prefHeight="200.0" prefWidth="363.0" text="Results are displayed here." wrapText="true" />
+               </content>
+            </ScrollPane>
+            <CheckBox fx:id="details" layoutX="390.0" layoutY="253.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="74.0" text="Details" />
+            <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" layoutX="34.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

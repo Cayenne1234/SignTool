@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SignController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#QuitOnAction" text="Quit" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="backButton" layoutX="31.0" layoutY="287.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="45.0" prefWidth="110.0" text="Back" />
+            <Button fx:id="signButton" layoutX="486.0" layoutY="287.0" mnemonicParsing="false" onAction="#signButtonOnAction" prefHeight="45.0" prefWidth="110.0" text="Sign" />
+            <PasswordField fx:id="keypw" layoutX="246.0" layoutY="146.0" />
+            <Text layoutX="33.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Password for keystore" />
+            <Text layoutX="37.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Keystore location">
+               <effect>
+                  <Bloom />
+               </effect>
+            </Text>
+            <Text layoutX="37.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alias" />
+            <Text layoutX="33.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password for private key (if different)" />
+            <PasswordField fx:id="storepw" layoutX="246.0" layoutY="77.0" />
+            <TextField fx:id="alias" layoutX="246.0" layoutY="110.0" />
+            <TextField fx:id="keystore" layoutX="246.0" layoutY="27.0" />
+            <Button fx:id="browse" layoutX="395.0" layoutY="27.0" mnemonicParsing="false" onAction="#browseButtonOnAction" prefHeight="25.0" prefWidth="65.0" text="Browse.." />
+            <Text layoutX="33.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name of signed JAR" />
+            <TextField fx:id="jarname" layoutX="246.0" layoutY="175.0" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
