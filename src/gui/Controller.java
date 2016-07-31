@@ -7,10 +7,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.layout.AnchorPane;
@@ -80,8 +82,9 @@ public class Controller {
 		Stage stage = (Stage) signButton.getScene().getWindow();
 		Scene scene = null;
 		
-		if(s.getFile() == null){
-			System.out.println("FAIL! W�hle File aus");
+		if(s == null ||s.getFile() == null){
+			Alert alert = JGenKeyController.createAlert(AlertType.ERROR,"No file chosen","No file chosen", "No file chosen"  );
+			alert.showAndWait();
 		}else{
 			
 			//javapart
@@ -116,8 +119,11 @@ public class Controller {
 	
 	@FXML
 	private void verifyButtonOnAction() throws Exception{
-		if(s.getFile() == null){
-			System.out.println("FAIL! W�hle File aus");
+		
+		if(s == null ||s.getFile() == null){
+			Alert alert = JGenKeyController.createAlert(AlertType.ERROR,"No file chosen","No file chosen", "No file chosen"  );
+			alert.showAndWait();
+
 		}else{  
 			Stage stage = (Stage) verifyButton.getScene().getWindow();
 			FXMLLoader fxml = new FXMLLoader(getClass().getClassLoader().getResource("gui/verify.fxml"));
